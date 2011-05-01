@@ -11,7 +11,6 @@ require 'rake'
 
 require 'jeweler'
 Jeweler::Tasks.new do |gem|
-  # gem is a Gem::Specification... see http://docs.rubygems.org/read/chapter/20 for more options
   gem.name = "mtgox-ruby"
   gem.homepage = "http://github.com/paulasmuth/mtgox-ruby"
   gem.license = "MIT"
@@ -19,15 +18,15 @@ Jeweler::Tasks.new do |gem|
   gem.description = "trade bitcoins from ruby"
   gem.email = "paul@23linesofcode.com"
   gem.authors = ["Paul Asmuth"]
-   gem.add_development_dependency 'rspec', '> 1.2.3'
+  gem.add_development_dependency 'rspec', '> 1.2.3'
 end
 Jeweler::RubygemsDotOrgTasks.new
 
-require 'rake/testtask'
-Rake::TestTask.new(:test) do |test|
-  test.libs << 'lib' << 'test'
-  test.pattern = 'test/**/test_*.rb'
-  test.verbose = true
+require 'rspec'
+require 'rspec/core/rake_task'
+desc "Run all examples"
+RSpec::Core::RakeTask.new('spec') do |spec|
+  spec.pattern = 'spec/*_spec.rb'
 end
 
 require 'rcov/rcovtask'
