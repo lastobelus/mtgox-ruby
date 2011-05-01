@@ -1,19 +1,19 @@
 = mtgox-ruby
 
-API Client for the Mt.Gox bitcoin exchange
+ruby api client for the mtgox.com bitcoin exchange
 
 = Installation
 
 In your Gemfile
-	gem "mtgox-ruby", :git => "git://github.com/paulasmuth/mtgox-ruby.git"
+  gem "mtgox-ruby", :git => "git://github.com/paulasmuth/mtgox-ruby.git"
 	
 or
-	gem install git://github.com/paulasmuth/mtgox-ruby.git
+  gem install git://github.com/paulasmuth/mtgox-ruby.git
 
 = Usage
 
 To get the recent trades:
-	@mtgox_client = MtgoxClient.new	
-	trades = @mtgox_client.recent_trades
+  @mtgox_client = MtgoxClient.new	
+  trades = @mtgox_client.recent_trades
 
 
